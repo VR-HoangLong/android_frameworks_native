@@ -80,6 +80,10 @@ public:
 
     // Create a GraphicBuffer by allocating and managing a buffer internally.
     // This function is privileged.  See reallocate for details.
+#ifdef MTK_HARDWARE
+    GraphicBuffer(uint32_t inWidth, uint32_t inHeight, PixelFormat inFormat,
+            uint32_t inUsage);
+#endif
     GraphicBuffer(uint32_t inWidth, uint32_t inHeight, PixelFormat inFormat,
             uint32_t inLayerCount, uint64_t inUsage,
             std::string requestorName = "<Unknown>");

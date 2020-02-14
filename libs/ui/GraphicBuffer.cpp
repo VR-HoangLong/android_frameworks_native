@@ -57,6 +57,26 @@ GraphicBuffer::GraphicBuffer()
     handle = NULL;
 }
 
+#ifdef MTK_HARDWARE
+GraphicBuffer::GraphicBuffer(uint32_t inWidth, uint32_t inHeight,
+        PixelFormat inFormat, uint32_t inUsage)
+    : BASE(), mOwner(ownData), mBufferMapper(GraphicBufferMapper::get()),
+      mInitCheck(NO_ERROR), mId(getUniqueId()), mGenerationNumber(0)
+{
+    width  =
+    height =
+    stride =
+    format =
+    usage_deprecated = 0;
+    usage  = 0;
+    layerCount = 0;
+    handle = NULL;
+    std::string requestorName = "<unknown>";
+    mInitCheck = initWithSize(inWidth, inHeight, inFormat, 0,
+            inUsage, std::move(requestorName));
+}
+#endif
+
 // deprecated
 GraphicBuffer::GraphicBuffer(uint32_t inWidth, uint32_t inHeight,
         PixelFormat inFormat, uint32_t inUsage, std::string requestorName)
