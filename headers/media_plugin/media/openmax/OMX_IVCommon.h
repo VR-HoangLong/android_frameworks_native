@@ -149,6 +149,19 @@ typedef enum OMX_COLOR_FORMATTYPE {
     OMX_COLOR_Format24BitABGR6666,
     OMX_COLOR_FormatKhronosExtensions = 0x6F000000, /**< Reserved region for introducing Khronos Standard Extensions */
     OMX_COLOR_FormatVendorStartUnused = 0x7F000000, /**< Reserved region for introducing Vendor Extensions */
+
+// MTK
+    OMX_COLOR_FormatVendorMTKYUV = 0x7F000001,
+    OMX_COLOR_FormatVendorMTKYUV_FCM = 0x7F000002,
+    OMX_COLOR_FormatVendorMTKYUV_UFO = 0x7F000003,
+    OMX_COLOR_FormatVendorMTKYUV_10BIT_H = 0x7F000004,
+    OMX_COLOR_FormatVendorMTKYUV_10BIT_V = 0x7F000005,
+    OMX_COLOR_FormatVendorMTKYUV_UFO_10BIT_H = 0x7F000006,
+    OMX_COLOR_FormatVendorMTKYUV_UFO_10BIT_V = 0x7F000007,
+    OMX_MTK_COLOR_FormatYV12 = 0x7F000200,
+    OMX_MTK_COLOR_FormatBitStream = 0x7F000300,
+// end MTK
+
     /**<Reserved android opaque colorformat. Tells the encoder that
      * the actual colorformat will be  relayed by the
      * Gralloc Buffers.
